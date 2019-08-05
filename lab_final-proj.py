@@ -38,7 +38,10 @@
 #congratulate if user wins
 #dont congratulate if user loses
 import turtle
+import Tkinter
 turtle.bgcolor("green")
+screen = turtle.Screen()
+screen.setup(1500, 1000)
 
 turtle.register_shape("car.gif")
 turtle.register_shape("cow.gif")
@@ -52,52 +55,62 @@ turtle.register_shape("recycling factory.gif")
 turtle.register_shape("sea.gif")
 
 car = turtle.clone ()
+car.shape("car.gif")
 car.penup()
 car.hideturtle()
 car.goto(-600, -100)
 
 elec_car = turtle.clone()
+elec_car.shape("electric car.gif")
 elec_car.penup()
 elec_car.hideturtle()
 elec_car.goto(-600, -100)
 
 
 cow = turtle.clone()
+cow.shape("cow.gif")
 cow.penup()
 cow.hideturtle()
 cow.goto(-300, -100)
 
 farting_cow = turtle.clone()
+farting_cow.shape("cow-farting.gif")
 farting_cow.penup()
 farting_cow.hideturtle()
 farting_cow.goto(-300, -100)
 
 factory = turtle.clone()
+factory.shape("factory.gif")
 factory.penup()
 factory.hideturtle()
 factory.goto(0, -100)
 
 refactory = turtle.clone()
+refactory.shape("recycling factory.gif")
 refactory.penup()
 refactory.hideturtle()
 refactory.goto(0, -100)
 
 fire = turtle.clone()
+fire.shape("fire.gif")
 fire.penup()
 fire.hideturtle()
 fire.goto(300, -100)
 
 flowers = turtle.clone()
+flowers.shape("flowers.gif")
 flowers.penup()
 flowers.hideturtle()
 flowers.goto(300, -100)
 
 sea = turtle.clone()
+sea.shape("sea.gif")
 sea.penup()
 sea.hideturtle()
 sea.goto(600, -100)
 
 trash = turtle.clone()
+trash.shape("plastic trash.gif")
 trash.penup()
 trash.hideturtle()
 trash.goto(600, -100)
@@ -129,6 +142,7 @@ class Question:
           self.prompt = prompt
           self.answer = answer
           self.turtle_shape = turtle_shape
+          self.bad_turtle = bad_turtle
 question_prompts = [
      "\nwhich country has the most pollution?\n(a) China\n(b) Brazil\n(c) United States\n(d) Indonesia\n",
      "\nHow many years of oil is left in the world?\n(a) 101 years\n(b) 53 years\n(c) 20 years\n(d) 69 years\n",
@@ -148,15 +162,15 @@ question_prompts = [
 ]
 questions = [
      Question(question_prompts[0], "a", elec_car, car),
-     Question(question_prompts[1], "b", cow, farting_car),
+     Question(question_prompts[1], "b", cow, farting_cow),
      Question(question_prompts[2], "d", refactory, factory),
      Question(question_prompts[3], "a", flowers, fire),
      Question(question_prompts[4], "c", sea, trash),
-     Question(question_prompts[5], "d", null),
-     Question(question_prompts[6], "a", null),
-     Question(question_prompts[7], "b", null),
-     Question(question_prompts[8], "c", null),
-     Question(question_prompts[9], "b", null),
+     Question(question_prompts[5], "d", null, null),
+     Question(question_prompts[6], "a", null, null),
+     Question(question_prompts[7], "b", null, null),
+     Question(question_prompts[8], "c", null, null),
+     Question(question_prompts[9], "b", null, null),
      
 ]
 
@@ -171,7 +185,8 @@ def run_quiz(questions):
           else:
             print("the answer is incorrect..")
             print("the right answer is " + question.answer)
-            question.bad_shape.showturtle()
+            question.bad_turtle.showturtle()
+            
             
 
 
