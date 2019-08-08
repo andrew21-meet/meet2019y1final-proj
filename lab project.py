@@ -57,42 +57,42 @@ turtle.register_shape("factory.gif")
 turtle.register_shape("cow-farting.gif")
 turtle.register_shape("fire.gif")
 turtle.register_shape("flowers.gif")
-turtle.register_shape("plastic trash.gif")
+turtle.register_shape("6 trash images.gif")
 turtle.register_shape("recycling factory.gif")
-turtle.register_shape("sea.gif")
+turtle.register_shape("6 sea.gif")
 
 car = turtle.clone ()
 car.shape("car.gif")
 car.penup()
 car.hideturtle()
-car.goto(-600, -100)
+car.goto(-600, -200)
 
 elec_car = turtle.clone()
 elec_car.shape("electric car.gif")
 elec_car.penup()
 elec_car.hideturtle()
-elec_car.goto(-600, -100)
+elec_car.goto(-600, -200)
 car_s=pygame.mixer.Sound("Car Engine Sound Effect.wav")
 
 cow = turtle.clone()
 cow.shape("cow.gif")
 cow.penup()
 cow.hideturtle()
-cow.goto(-300, -100)
+cow.goto(-300, -200)
 cow_s=pygame.mixer.Sound("Moo! Sound Effect [COW].wav")
 
 farting_cow = turtle.clone()
 farting_cow.shape("cow-farting.gif")
 farting_cow.penup()
 farting_cow.hideturtle()
-farting_cow.goto(-300, -100)
+farting_cow.goto(-300, -200)
 f_cow_s=pygame.mixer.Sound("Fart sound effect.wav")
 
 factory = turtle.clone()
 factory.shape("factory.gif")
 factory.penup()
 factory.hideturtle()
-factory.goto(0, -100)
+factory.goto(0, -200)
 factory_s=pygame.mixer.Sound("factory.wav")
 
 
@@ -100,34 +100,34 @@ refactory = turtle.clone()
 refactory.shape("recycling factory.gif")
 refactory.penup()
 refactory.hideturtle()
-refactory.goto(0, -100)
+refactory.goto(0, -200)
 
 fire = turtle.clone()
 fire.shape("fire.gif")
 fire.penup()
 fire.hideturtle()
-fire.goto(300, -100)
+fire.goto(500, -200)
 fire_s=pygame.mixer.Sound("FIRE SOUND EFFECT IN HIGH QUALITY.wav")
 
 flowers = turtle.clone()
 flowers.shape("flowers.gif")
 flowers.penup()
 flowers.hideturtle()
-flowers.goto(300, -100)
+flowers.goto(400, -200)
 flowers_s=pygame.mixer.Sound("Bird Sound Effect.wav")
 
 sea = turtle.clone()
-sea.shape("sea.gif")
+sea.shape("6 sea.gif")
 sea.penup()
 sea.hideturtle()
-sea.goto(600, -100)
+sea.goto(0, -400)
 sea_s=pygame.mixer.Sound("OCEAN SOUND EFFECT [HD].wav")
 
 trash = turtle.clone()
-trash.shape("plastic trash.gif")
+trash.shape("6 trash images.gif")
 trash.penup()
 trash.hideturtle()
-trash.goto(600, -100)
+trash.goto(0, -400)
 
 
 null = turtle.clone()
@@ -203,9 +203,9 @@ question_prompts = [
 #right answers 
 ]
 questions = [
-     Question(question_prompts[0], "a", elec_car, car, car_s , car_s),
-     Question(question_prompts[1], "b", cow, farting_cow, cow_s,f_cow_s),
-     Question(question_prompts[2], "d", refactory, factory, factory_s, factory_s),
+     Question(question_prompts[0], "a", refactory, factory, factory_s , factory_s),
+     Question(question_prompts[1], "b", elec_car, car, car_s, car_s),
+     Question(question_prompts[2], "d", cow, farting_cow, cow_s,f_cow_s),
      Question(question_prompts[3], "a", flowers, fire, flowers_s, fire_s),
      Question(question_prompts[4], "c", sea, trash,sea_s, sea_s),
      Question(question_prompts[5], "d", null, null, c_answer_s, w_answer_s),
